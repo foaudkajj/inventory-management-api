@@ -1,6 +1,6 @@
 {
   "name": "inventory-management-api",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "author": "",
   "private": true,
@@ -64,6 +64,7 @@
       "ts"
     ],
     "rootDir": "./",
+    "modulePaths": ["<rootDir>"],
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
