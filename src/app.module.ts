@@ -3,6 +3,8 @@ import {ConfigModule} from '@nestjs/config';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {AppController} from './app.controller';
 import {AppService} from './app.service';
+import {MerchantController} from './endpoints/merchant/merchant.controller';
+import {MerchantService} from './endpoints/merchant/merchant.service';
 import {SharedModule} from './shared.module';
 
 @Module({
@@ -29,7 +31,7 @@ import {SharedModule} from './shared.module';
     }),
     SharedModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, MerchantController],
+  providers: [AppService, MerchantService],
 })
 export class AppModule {}
