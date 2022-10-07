@@ -4,13 +4,14 @@ import {ColorRepository} from './endpoints/color/color.repository';
 import {CurrencyRepository} from './endpoints/currency/currency.repository';
 import {CustomerInfoRepository} from './endpoints/customer-info/customer-info.repository';
 import {MerchantRepository} from './endpoints/merchant/merchant.repository';
+import { PaymentMethodRepository } from './endpoints/payment-method/payment-method.repository';
 import {UnitRepository} from './endpoints/unit/unit.repository';
-import {Color, Currency, CustomerInfo, Merchant} from './models';
+import {Color, Currency, CustomerInfo, Merchant, PaymentMethod} from './models';
 import {Unit} from './models/unit.model';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo]),
+    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo,PaymentMethod]),
   ],
   controllers: [],
   providers: [
@@ -19,6 +20,7 @@ import {Unit} from './models/unit.model';
     ColorRepository,
     CustomerInfoRepository,
     CurrencyRepository,
+    PaymentMethodRepository
   ],
   exports: [
     MerchantRepository,
@@ -26,6 +28,7 @@ import {Unit} from './models/unit.model';
     ColorRepository,
     CustomerInfoRepository,
     CurrencyRepository,
+    PaymentMethodRepository
   ],
 })
 /**
