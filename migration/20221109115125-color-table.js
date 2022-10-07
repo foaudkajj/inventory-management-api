@@ -15,6 +15,9 @@ module.exports = class colorTable20221109115125 {
     }
 
     async down(queryRunner) {
+        await queryRunner.query(
+            `drop table \`color\`;`,
+          );
     }
 
 }

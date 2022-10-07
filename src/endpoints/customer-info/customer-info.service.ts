@@ -1,19 +1,19 @@
 import { Injectable } from "@nestjs/common";
-import { Customer_info } from "src/models";
-import { CustomerInfoRepository } from "./customer_info.repository";
+import { CustomerInfo } from "src/models";
+import { CustomerInfoRepository } from "./customer-info.repository";
 
 @Injectable()
 export class CustomerInfoService{
     constructor(private customerinfoRepository: CustomerInfoRepository){}
-    getAll(): Promise<Customer_info[]> {
+    getAll(): Promise<CustomerInfo[]> {
         return this.customerinfoRepository.orm.find();
       }
     
-      insert(row: Customer_info) {
+      insert(row: CustomerInfo) {
         return this.customerinfoRepository.orm.insert(row);
       }
     
-      update(row: Partial<Customer_info>, id: string) {
+      update(row: Partial<CustomerInfo>, id: string) {
         return this.customerinfoRepository.orm.update({id: id}, row);
       }
     

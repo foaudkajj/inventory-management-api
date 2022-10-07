@@ -16,6 +16,9 @@ module.exports = class unitTable20221109115125 {
     }
 
     async down(queryRunner) {
+        await queryRunner.query(
+            `drop table \`unit\`;`,
+        );
     }
 
 }

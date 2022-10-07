@@ -14,6 +14,9 @@ module.exports = class currencyTable20221109115125 {
     }
 
     async down(queryRunner) {
+        await queryRunner.query(
+            `drop table \`currency\`;`,
+          );
     }
 
 }
