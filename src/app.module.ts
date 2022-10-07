@@ -1,19 +1,21 @@
-import {Module} from '@nestjs/common';
-import {ConfigModule} from '@nestjs/config';
-import {TypeOrmModule} from '@nestjs/typeorm';
-import {AppController} from './app.controller';
-import {AppService} from './app.service';
-import {ColorController} from './endpoints/color/color.controller';
-import {ColorService} from './endpoints/color/color.service';
-import {CurrencyController} from './endpoints/currency/currency.controller';
-import {CurrencyService} from './endpoints/currency/currency.service';
-import {CustomerInfoController} from './endpoints/customer-info/customer-info.controller';
-import {CustomerInfoService} from './endpoints/customer-info/customer-info.service';
-import {MerchantController} from './endpoints/merchant/merchant.controller';
-import {MerchantService} from './endpoints/merchant/merchant.service';
-import {UnitController} from './endpoints/unit/unit.controller';
-import {UnitService} from './endpoints/unit/unit.service';
-import {SharedModule} from './shared.module';
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { ColorController } from './endpoints/color/color.controller';
+import { ColorService } from './endpoints/color/color.service';
+import { CurrencyController } from './endpoints/currency/currency.controller';
+import { CurrencyService } from './endpoints/currency/currency.service';
+import { CustomerInfoController } from './endpoints/customer-info/customer-info.controller';
+import { CustomerInfoService } from './endpoints/customer-info/customer-info.service';
+import { MerchantController } from './endpoints/merchant/merchant.controller';
+import { MerchantService } from './endpoints/merchant/merchant.service';
+import { PaymentMethodController } from './endpoints/payment-method/payment-method.controller';
+import { PaymentMethodService } from './endpoints/payment-method/payment-method.service';
+import { UnitController } from './endpoints/unit/unit.controller';
+import { UnitService } from './endpoints/unit/unit.service';
+import { SharedModule } from './shared.module';
 
 @Module({
   imports: [
@@ -46,6 +48,7 @@ import {SharedModule} from './shared.module';
     ColorController,
     CurrencyController,
     CustomerInfoController,
+    PaymentMethodController
   ],
   providers: [
     AppService,
@@ -54,6 +57,7 @@ import {SharedModule} from './shared.module';
     ColorService,
     CurrencyService,
     CustomerInfoService,
+    PaymentMethodService
   ],
 })
-export class AppModule {}
+export class AppModule { }
