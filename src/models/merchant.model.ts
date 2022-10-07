@@ -4,7 +4,7 @@ import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
 @Entity()
 export class Merchant {
   @PrimaryGeneratedColumn('uuid')
-  @ApiProperty({required: true, format:'uuid'})
+  @ApiProperty({required: true, format: 'uuid'})
   id: string;
 
   @Column({length: 100, name: 'title'})
