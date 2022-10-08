@@ -31,11 +31,11 @@ export class TransactionCard {
   gsm: string;
 
   @Column({name: 'currency_id'})
-  @ApiProperty({required: true, format: 'uuid'})
+  @ApiProperty({required: false, format: 'uuid'})
   currencyId: string;
 
   @ManyToOne(() => Currency, {
-    onDelete: 'SET NULL',
+    onDelete: 'RESTRICT',
     onUpdate: 'CASCADE',
   })
   @JoinColumn({name: 'currency_id'})

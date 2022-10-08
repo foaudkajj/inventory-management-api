@@ -15,6 +15,8 @@ import { PaymentMethodController } from './endpoints/payment-method/payment-meth
 import { PaymentMethodService } from './endpoints/payment-method/payment-method.service';
 import { TransactionCardController } from './endpoints/transaction-card/transaction-card.controller';
 import { TransactionCardService } from './endpoints/transaction-card/transaction-card.service';
+import { TransactionController } from './endpoints/transaction/transaction.controller';
+import { TransactionService } from './endpoints/transaction/transaction.service';
 import { UnitController } from './endpoints/unit/unit.controller';
 import { UnitService } from './endpoints/unit/unit.service';
 import { SharedModule } from './shared.module';
@@ -51,7 +53,8 @@ import { SharedModule } from './shared.module';
     CurrencyController,
     CustomerInfoController,
     PaymentMethodController,
-    TransactionCardController
+    TransactionCardController,
+    TransactionController
   ],
   providers: [
     AppService,
@@ -61,7 +64,8 @@ import { SharedModule } from './shared.module';
     CurrencyService,
     CustomerInfoService,
     PaymentMethodService,
-    TransactionCardService
+    TransactionCardService,
+    TransactionService
   ],
 })
 export class AppModule { }
