@@ -13,6 +13,8 @@ import { MerchantController } from './endpoints/merchant/merchant.controller';
 import { MerchantService } from './endpoints/merchant/merchant.service';
 import { PaymentMethodController } from './endpoints/payment-method/payment-method.controller';
 import { PaymentMethodService } from './endpoints/payment-method/payment-method.service';
+import { TransactionCardController } from './endpoints/transaction-card/transaction-card.controller';
+import { TransactionCardService } from './endpoints/transaction-card/transaction-card.service';
 import { UnitController } from './endpoints/unit/unit.controller';
 import { UnitService } from './endpoints/unit/unit.service';
 import { SharedModule } from './shared.module';
@@ -48,7 +50,8 @@ import { SharedModule } from './shared.module';
     ColorController,
     CurrencyController,
     CustomerInfoController,
-    PaymentMethodController
+    PaymentMethodController,
+    TransactionCardController
   ],
   providers: [
     AppService,
@@ -57,7 +60,8 @@ import { SharedModule } from './shared.module';
     ColorService,
     CurrencyService,
     CustomerInfoService,
-    PaymentMethodService
+    PaymentMethodService,
+    TransactionCardService
   ],
 })
 export class AppModule { }
