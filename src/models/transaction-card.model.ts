@@ -31,7 +31,7 @@ export class TransactionCard {
   gsm: string;
 
   @Column({name: 'currency_id'})
-  @ApiProperty({required: false, format: 'uuid'})
+  @ApiProperty({required: true, format: 'uuid'})
   currencyId: string;
 
   @ManyToOne(() => Currency, {

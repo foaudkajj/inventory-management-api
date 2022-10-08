@@ -24,7 +24,7 @@ export class Transaction {
     transactionType: number;
 
     @Column({ name: 'amount' })
-    @ApiProperty({ required: false, type: 'number', format: 'double' })
+    @ApiProperty({ required: true, type: 'number', format: 'double' })
     amount: number;
 
     @Column({ length: 1000, name: 'description' })
@@ -32,11 +32,11 @@ export class Transaction {
     description: string;
 
     @Column({ name: 'payment_method_id' })
-    @ApiProperty({ required: false, format: 'uuid' })
+    @ApiProperty({ required: true, format: 'uuid' })
     paymentMethodId: string;
 
     @Column({ name: 'transaction_card_id' })
-    @ApiProperty({ required: false, format: 'uuid' })
+    @ApiProperty({ required: true, format: 'uuid' })
     transactionCardId: string;
 
     @ManyToOne(() => PaymentMethod, {
