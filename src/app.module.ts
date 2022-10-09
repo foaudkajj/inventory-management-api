@@ -7,6 +7,8 @@ import { CityController } from './endpoints/city/city.controller';
 import { CityService } from './endpoints/city/city.service';
 import { ColorController } from './endpoints/color/color.controller';
 import { ColorService } from './endpoints/color/color.service';
+import { CountryController } from './endpoints/country/country.controller';
+import { CountryService } from './endpoints/country/country.service';
 import { CurrencyController } from './endpoints/currency/currency.controller';
 import { CurrencyService } from './endpoints/currency/currency.service';
 import { CustomerInfoController } from './endpoints/customer-info/customer-info.controller';
@@ -57,7 +59,8 @@ import { SharedModule } from './shared.module';
     PaymentMethodController,
     TransactionCardController,
     TransactionController,
-    CityController
+    CityController,
+    CountryController
   ],
   providers: [
     AppService,
@@ -69,7 +72,8 @@ import { SharedModule } from './shared.module';
     PaymentMethodService,
     TransactionCardService,
     TransactionService,
-    CityService
+    CityService,
+    CountryService
   ],
 })
 export class AppModule { }
