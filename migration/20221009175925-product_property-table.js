@@ -10,10 +10,10 @@ module.exports = class productPropertyTable20221009175925 {
                 \`translate\` varchar(100) null,
                 \`data_field\` varchar(15) null,
                 \`editor_type\` varchar(30) null,
-                \`validation\` varchar(65535) null,
-                \`form_item_editor_options\` varchar(65535) null,
-                \`grid_column_editor_options\` varchar(65535) null,
-                \`grid_column_conf\` varchar(65535) null,
+                \`validation\` text(65535) null,
+                \`form_item_editor_options\` text(65535) null,
+                \`grid_column_editor_options\` text(65535) null,
+                \`grid_column_conf\` text(65535) null,
                 constraint \`pk_product_property\` primary key (\`id\`)
             ) Engine = InnoDB;`
         )

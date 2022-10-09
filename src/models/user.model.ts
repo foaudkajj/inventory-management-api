@@ -4,11 +4,13 @@ import {
     Entity,
     JoinColumn,
     ManyToOne,
+    OneToMany,
     PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Branch } from './branch.model';
 import { Merchant } from './merchant.model';
 import { Role } from './role.model';
+import { Sale } from './sale.model';
 
 export enum UserStatus {
     Active = "Active",
@@ -89,4 +91,7 @@ export class User {
     })
     @JoinColumn({ name: 'merchant_id' })
     merchant: Merchant;
+
+    @OneToMany(() => Sale, (sale) => sale.user)
+    saleList: Sale[];
 }
