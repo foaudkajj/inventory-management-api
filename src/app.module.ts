@@ -19,6 +19,8 @@ import { MerchantController } from './endpoints/merchant/merchant.controller';
 import { MerchantService } from './endpoints/merchant/merchant.service';
 import { PaymentMethodController } from './endpoints/payment-method/payment-method.controller';
 import { PaymentMethodService } from './endpoints/payment-method/payment-method.service';
+import { RoleController } from './endpoints/role/role.controller';
+import { RoleService } from './endpoints/role/role.service';
 import { TransactionCardController } from './endpoints/transaction-card/transaction-card.controller';
 import { TransactionCardService } from './endpoints/transaction-card/transaction-card.service';
 import { TransactionController } from './endpoints/transaction/transaction.controller';
@@ -63,7 +65,8 @@ import { SharedModule } from './shared.module';
     TransactionController,
     CityController,
     CountryController,
-    BranchController
+    BranchController,
+    RoleController
   ],
   providers: [
     AppService,
@@ -77,7 +80,8 @@ import { SharedModule } from './shared.module';
     TransactionService,
     CityService,
     CountryService,
-    BranchService
+    BranchService,
+    RoleService
   ],
 })
 export class AppModule { }
