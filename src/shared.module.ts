@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CityRepository } from './endpoints/city/city.repository';
 import { ColorRepository } from './endpoints/color/color.repository';
 import { CurrencyRepository } from './endpoints/currency/currency.repository';
 import { CustomerInfoRepository } from './endpoints/customer-info/customer-info.repository';
@@ -8,12 +9,12 @@ import { PaymentMethodRepository } from './endpoints/payment-method/payment-meth
 import { TransactionCardRepository } from './endpoints/transaction-card/transaction-card.repository';
 import { TransactionRepository } from './endpoints/transaction/transaction.repository';
 import { UnitRepository } from './endpoints/unit/unit.repository';
-import { Color, Currency, CustomerInfo, Merchant, PaymentMethod, Transaction, TransactionCard } from './models';
+import { City, Color, Currency, CustomerInfo, Merchant, PaymentMethod, Transaction, TransactionCard } from './models';
 import { Unit } from './models/unit.model';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction]),
+    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction, City]),
   ],
   controllers: [],
   providers: [
@@ -24,7 +25,8 @@ import { Unit } from './models/unit.model';
     CurrencyRepository,
     PaymentMethodRepository,
     TransactionCardRepository,
-    TransactionRepository
+    TransactionRepository,
+    CityRepository
   ],
   exports: [
     MerchantRepository,
@@ -34,7 +36,8 @@ import { Unit } from './models/unit.model';
     CurrencyRepository,
     PaymentMethodRepository,
     TransactionCardRepository,
-    TransactionRepository
+    TransactionRepository,
+    CityRepository
   ],
 })
 /**
