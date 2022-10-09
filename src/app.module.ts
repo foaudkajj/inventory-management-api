@@ -27,6 +27,8 @@ import { TransactionController } from './endpoints/transaction/transaction.contr
 import { TransactionService } from './endpoints/transaction/transaction.service';
 import { UnitController } from './endpoints/unit/unit.controller';
 import { UnitService } from './endpoints/unit/unit.service';
+import { UserController } from './endpoints/user/user.controller';
+import { UserService } from './endpoints/user/user.service';
 import { SharedModule } from './shared.module';
 
 @Module({
@@ -66,7 +68,8 @@ import { SharedModule } from './shared.module';
     CityController,
     CountryController,
     BranchController,
-    RoleController
+    RoleController,
+    UserController
   ],
   providers: [
     AppService,
@@ -81,7 +84,8 @@ import { SharedModule } from './shared.module';
     CityService,
     CountryService,
     BranchService,
-    RoleService
+    RoleService,
+    UserService
   ],
 })
 export class AppModule { }
