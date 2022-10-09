@@ -4,11 +4,13 @@ import {
     Entity,
     JoinColumn,
     ManyToOne,
+    OneToMany,
     PrimaryGeneratedColumn,
 } from 'typeorm';
 import { City } from './city.model';
 import { Country } from './country.model';
 import { Merchant } from './merchant.model';
+import { User } from './user.model';
 
 @Entity()
 export class Branch {
@@ -52,4 +54,7 @@ export class Branch {
     })
     @JoinColumn({ name: 'merchant_id' })
     merchant: Merchant;
+
+    @OneToMany(() => User, (user) => user.branch)
+    users: User[];
 }
