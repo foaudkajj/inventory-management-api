@@ -8,3 +8,4 @@ export * from './transaction-card.model';
 export * from './transaction.model';
 export * from './city.model';
 export * from './country.model';
+export * from './branch.model';

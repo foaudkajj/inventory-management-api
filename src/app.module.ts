@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { BranchController } from './endpoints/branch/branch.controller';
+import { BranchService } from './endpoints/branch/branch.service';
 import { CityController } from './endpoints/city/city.controller';
 import { CityService } from './endpoints/city/city.service';
 import { ColorController } from './endpoints/color/color.controller';
@@ -60,7 +62,8 @@ import { SharedModule } from './shared.module';
     TransactionCardController,
     TransactionController,
     CityController,
-    CountryController
+    CountryController,
+    BranchController
   ],
   providers: [
     AppService,
@@ -73,7 +76,8 @@ import { SharedModule } from './shared.module';
     TransactionCardService,
     TransactionService,
     CityService,
-    CountryService
+    CountryService,
+    BranchService
   ],
 })
 export class AppModule { }
