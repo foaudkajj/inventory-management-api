@@ -10,7 +10,7 @@ module.exports = class transactionCardTable20221008130810 {
                 \`code\` varchar(50) null,
                 \`owner_name\` varchar(50) null,
                 \`gsm\` varchar(50) null,
-                \`currency_id\` char(36) null,
+                \`currency_id\` char(36) not null,
                 constraint \`pk_transaction_card\` primary key (\`id\`),
                 constraint \`fk_transaction_card_currency\` foreign key (\`currency_id\`) references \`currency\` (\`id\`) on update cascade on delete restrict
             ) Engine = InnoDB;`

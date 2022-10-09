@@ -6,13 +6,14 @@ import { CustomerInfoRepository } from './endpoints/customer-info/customer-info.
 import { MerchantRepository } from './endpoints/merchant/merchant.repository';
 import { PaymentMethodRepository } from './endpoints/payment-method/payment-method.repository';
 import { TransactionCardRepository } from './endpoints/transaction-card/transaction-card.repository';
+import { TransactionRepository } from './endpoints/transaction/transaction.repository';
 import { UnitRepository } from './endpoints/unit/unit.repository';
-import { Color, Currency, CustomerInfo, Merchant, PaymentMethod, TransactionCard } from './models';
+import { Color, Currency, CustomerInfo, Merchant, PaymentMethod, Transaction, TransactionCard } from './models';
 import { Unit } from './models/unit.model';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard]),
+    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction]),
   ],
   controllers: [],
   providers: [
@@ -22,7 +23,8 @@ import { Unit } from './models/unit.model';
     CustomerInfoRepository,
     CurrencyRepository,
     PaymentMethodRepository,
-    TransactionCardRepository
+    TransactionCardRepository,
+    TransactionRepository
   ],
   exports: [
     MerchantRepository,
@@ -31,7 +33,8 @@ import { Unit } from './models/unit.model';
     CustomerInfoRepository,
     CurrencyRepository,
     PaymentMethodRepository,
-    TransactionCardRepository
+    TransactionCardRepository,
+    TransactionRepository
   ],
 })
 /**

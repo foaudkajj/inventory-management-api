@@ -35,7 +35,7 @@ export class TransactionCard {
   currencyId: string;
 
   @ManyToOne(() => Currency, {
-    onDelete: 'SET NULL',
+    onDelete: 'RESTRICT',
     onUpdate: 'CASCADE',
   })
   @JoinColumn({name: 'currency_id'})
