@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CityRepository } from './endpoints/city/city.repository';
 import { ColorRepository } from './endpoints/color/color.repository';
+import { CountryRepository } from './endpoints/country/country.repository';
 import { CurrencyRepository } from './endpoints/currency/currency.repository';
 import { CustomerInfoRepository } from './endpoints/customer-info/customer-info.repository';
 import { MerchantRepository } from './endpoints/merchant/merchant.repository';
@@ -9,12 +10,12 @@ import { PaymentMethodRepository } from './endpoints/payment-method/payment-meth
 import { TransactionCardRepository } from './endpoints/transaction-card/transaction-card.repository';
 import { TransactionRepository } from './endpoints/transaction/transaction.repository';
 import { UnitRepository } from './endpoints/unit/unit.repository';
-import { City, Color, Currency, CustomerInfo, Merchant, PaymentMethod, Transaction, TransactionCard } from './models';
+import { City, Color, Country, Currency, CustomerInfo, Merchant, PaymentMethod, Transaction, TransactionCard } from './models';
 import { Unit } from './models/unit.model';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction, City]),
+    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction, City, Country]),
   ],
   controllers: [],
   providers: [
@@ -26,7 +27,8 @@ import { Unit } from './models/unit.model';
     PaymentMethodRepository,
     TransactionCardRepository,
     TransactionRepository,
-    CityRepository
+    CityRepository,
+    CountryRepository
   ],
   exports: [
     MerchantRepository,
@@ -37,7 +39,8 @@ import { Unit } from './models/unit.model';
     PaymentMethodRepository,
     TransactionCardRepository,
     TransactionRepository,
-    CityRepository
+    CityRepository,
+    CountryRepository
   ],
 })
 /**
