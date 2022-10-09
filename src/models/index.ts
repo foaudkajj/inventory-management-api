@@ -11,3 +11,5 @@ export * from './country.model';
 export * from './branch.model';
 export * from './role.model';
 export * from './user.model';
+export * from './product-property.model';
+export * from './product-type.model';
