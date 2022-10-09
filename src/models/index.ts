@@ -6,3 +6,4 @@ export * from './customer-info.model';
 export * from './payment-method.model';
 export * from './transaction-card.model';
 export * from './transaction.model';
+export * from './city.model';
