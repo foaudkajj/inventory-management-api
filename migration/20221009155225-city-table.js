@@ -7,7 +7,7 @@ module.exports = class cityTable20221009155225 {
             `create table \`city\`(
                 \`id\` char(36) not null,
                 \`name\` varchar(50) not null,
-                constraint \`pk_transaction\` primary key (\`id\`)
+                constraint \`pk_city\` primary key (\`id\`)
             ) Engine = InnoDB;`
         )
     }
