@@ -9,3 +9,4 @@ export * from './transaction.model';
 export * from './city.model';
 export * from './country.model';
 export * from './branch.model';
+export * from './role.model';

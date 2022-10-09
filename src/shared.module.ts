@@ -8,15 +8,16 @@ import { CurrencyRepository } from './endpoints/currency/currency.repository';
 import { CustomerInfoRepository } from './endpoints/customer-info/customer-info.repository';
 import { MerchantRepository } from './endpoints/merchant/merchant.repository';
 import { PaymentMethodRepository } from './endpoints/payment-method/payment-method.repository';
+import { RoleRepository } from './endpoints/role/role.repository';
 import { TransactionCardRepository } from './endpoints/transaction-card/transaction-card.repository';
 import { TransactionRepository } from './endpoints/transaction/transaction.repository';
 import { UnitRepository } from './endpoints/unit/unit.repository';
-import { Branch, City, Color, Country, Currency, CustomerInfo, Merchant, PaymentMethod, Transaction, TransactionCard } from './models';
+import { Branch, City, Color, Country, Currency, CustomerInfo, Merchant, PaymentMethod, Role, Transaction, TransactionCard } from './models';
 import { Unit } from './models/unit.model';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction, City, Country, Branch]),
+    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction, City, Country, Branch, Role]),
   ],
   controllers: [],
   providers: [
@@ -30,7 +31,8 @@ import { Unit } from './models/unit.model';
     TransactionRepository,
     CityRepository,
     CountryRepository,
-    BranchRepository
+    BranchRepository,
+    RoleRepository
   ],
   exports: [
     MerchantRepository,
@@ -43,7 +45,8 @@ import { Unit } from './models/unit.model';
     TransactionRepository,
     CityRepository,
     CountryRepository,
-    BranchRepository
+    BranchRepository,
+    RoleRepository
   ],
 })
 /**
