@@ -13,12 +13,13 @@ import { TransactionCardRepository } from './endpoints/transaction-card/transact
 import { TransactionRepository } from './endpoints/transaction/transaction.repository';
 import { UnitRepository } from './endpoints/unit/unit.repository';
 import { UserRepository } from './endpoints/user/user.repository';
-import { Branch, City, Color, Country, Currency, CustomerInfo, Merchant, PaymentMethod, Role, Transaction, TransactionCard, User } from './models';
+import { Branch, City, Color, Country, Currency, CustomerInfo, Merchant, PaymentMethod, Product, ProductProperty, ProductType, Role, Sale, SalePaymentMethod, SaleProduct, Transaction, TransactionCard, User } from './models';
+import { ProductTypeProperty } from './models/product-type-property.model';
 import { Unit } from './models/unit.model';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction, City, Country, Branch, Role, User]),
+    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction, City, Country, Branch, Role, User, ProductProperty, ProductType, ProductTypeProperty, Sale, Product, SaleProduct, SalePaymentMethod]),
   ],
   controllers: [],
   providers: [

@@ -10,6 +10,8 @@ import {
 import { City } from './city.model';
 import { Country } from './country.model';
 import { Merchant } from './merchant.model';
+import { Product } from './product.model';
+import { Sale } from './sale.model';
 import { User } from './user.model';
 
 @Entity()
@@ -57,4 +59,10 @@ export class Branch {
 
     @OneToMany(() => User, (user) => user.branch)
     users: User[];
+
+    @OneToMany(() => Sale, (sale) => sale.branch)
+    saleList: Sale[];
+
+    @OneToMany(() => Product, (product) => product.branch)
+    productList: Product[];
 }
