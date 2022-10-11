@@ -3,8 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthService } from './auth/auth.service';
-import { LocalStrategy } from './auth/strategies/local.strategy';
+import { AuthService } from './endpoints/auth/auth.service';
+import { LocalStrategy } from './endpoints/auth/strategies/local.strategy';
 import { BranchController } from './endpoints/branch/branch.controller';
 import { BranchService } from './endpoints/branch/branch.service';
 import { CityController } from './endpoints/city/city.controller';
@@ -34,7 +34,8 @@ import { UserService } from './endpoints/user/user.service';
 import { SharedModule } from './shared.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import { JwtStrategy } from './auth/strategies/jwr.strategy';
+import { JwtStrategy } from './endpoints/auth/strategies/jwr.strategy';
+import { AuthController } from './endpoints/auth/auth.controller';
 
 @Module({
   imports: [
@@ -79,7 +80,8 @@ import { JwtStrategy } from './auth/strategies/jwr.strategy';
     CountryController,
     BranchController,
     RoleController,
-    UserController
+    UserController,
+    AuthController
   ],
   providers: [
     AppService,
