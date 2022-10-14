@@ -3,7 +3,7 @@ import {ApiParam} from '@nestjs/swagger';
 import {Role} from 'src/models';
 import { RoleService } from './role.service';
 
-@Controller('role')
+@Controller('api/roles')
 export class RoleController {
   constructor(private readonly roleService: RoleService) {}
 
