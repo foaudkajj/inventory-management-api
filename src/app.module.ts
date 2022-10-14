@@ -34,8 +34,7 @@ import { UserService } from './endpoints/user/user.service';
 import { SharedModule } from './shared.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import { JwtStrategy } from './endpoints/auth/strategies/jwr.strategy';
-import { AuthController } from './endpoints/auth/auth.controller';
+import { JwtStrategy } from './endpoints/auth/strategies/jwt.strategy';
 
 @Module({
   imports: [
@@ -80,8 +79,7 @@ import { AuthController } from './endpoints/auth/auth.controller';
     CountryController,
     BranchController,
     RoleController,
-    UserController,
-    AuthController
+    UserController
   ],
   providers: [
     AppService,
