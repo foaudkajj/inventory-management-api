@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AuthService } from './endpoints/auth/auth.service';
+import { LocalStrategy } from './endpoints/auth/strategies/local.strategy';
 import { BranchController } from './endpoints/branch/branch.controller';
 import { BranchService } from './endpoints/branch/branch.service';
 import { CityController } from './endpoints/city/city.controller';
@@ -30,6 +32,10 @@ import { UnitService } from './endpoints/unit/unit.service';
 import { UserController } from './endpoints/user/user.controller';
 import { UserService } from './endpoints/user/user.service';
 import { SharedModule } from './shared.module';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
+import { JwtStrategy } from './endpoints/auth/strategies/jwr.strategy';
+import { AuthController } from './endpoints/auth/auth.controller';
 
 @Module({
   imports: [
@@ -54,6 +60,11 @@ import { SharedModule } from './shared.module';
       migrations: ['migration/*.js'],
     }),
     SharedModule,
+    PassportModule,
+    JwtModule.register({
+      secret: process.env.JWT_SECRET,
+      signOptions: { expiresIn: '15m' }
+    })
   ],
   controllers: [
     AppController,
@@ -69,7 +80,8 @@ import { SharedModule } from './shared.module';
     CountryController,
     BranchController,
     RoleController,
-    UserController
+    UserController,
+    AuthController
   ],
   providers: [
     AppService,
@@ -85,7 +97,13 @@ import { SharedModule } from './shared.module';
     CountryService,
     BranchService,
     RoleService,
-    UserService
+    UserService,
+    AuthService,
+    LocalStrategy,
+    JwtStrategy
   ],
+  exports: [
+    UserService
+  ]
 })
 export class AppModule { }
