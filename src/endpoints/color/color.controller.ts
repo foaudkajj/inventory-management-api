@@ -3,7 +3,7 @@ import {ApiParam} from '@nestjs/swagger';
 import {Color} from 'src/models';
 import {ColorService} from './color.service';
 
-@Controller('color')
+@Controller('api/colors')
 export class ColorController {
   constructor(private readonly colorService: ColorService) {}
 
