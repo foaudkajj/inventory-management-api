@@ -3,7 +3,7 @@ import {ApiParam} from '@nestjs/swagger';
 import {Country} from 'src/models';
 import { CountryService } from './country.service';
 
-@Controller('country')
+@Controller('api/countries')
 export class CountryController {
   constructor(private readonly countryService: CountryService) {}
 

@@ -3,7 +3,7 @@ import {ApiParam} from '@nestjs/swagger';
 import {Unit} from 'src/models';
 import {UnitService} from './unit.service';
 
-@Controller('unit')
+@Controller('api/units')
 export class UnitController {
   constructor(private readonly unitService: UnitService) {}
 

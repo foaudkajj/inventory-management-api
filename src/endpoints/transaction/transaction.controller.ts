@@ -3,7 +3,7 @@ import { ApiParam } from '@nestjs/swagger';
 import { Transaction } from 'src/models';
 import { TransactionService } from './transaction.service';
 
-@Controller('transaction')
+@Controller('api/transactions')
 export class TransactionController {
     constructor(private readonly transactionService: TransactionService) { }
 

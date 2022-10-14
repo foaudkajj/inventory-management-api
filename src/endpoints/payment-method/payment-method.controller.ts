@@ -3,7 +3,7 @@ import {ApiParam} from '@nestjs/swagger';
 import {PaymentMethod} from 'src/models';
 import { PaymentMethodService } from './payment-method.service';
 
-@Controller('payment-method')
+@Controller('api/payment-methods')
 export class PaymentMethodController {
   constructor(private readonly paymentmethodService: PaymentMethodService) {}
 

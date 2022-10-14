@@ -3,7 +3,7 @@ import {ApiParam} from '@nestjs/swagger';
 import {CustomerInfo} from 'src/models';
 import {CustomerInfoService} from './customer-info.service';
 
-@Controller('customer-info')
+@Controller('api/customer-info')
 export class CustomerInfoController {
   constructor(private readonly customerinfoService: CustomerInfoService) {}
 

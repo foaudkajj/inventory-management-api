@@ -3,7 +3,7 @@ import {ApiParam} from '@nestjs/swagger';
 import {Merchant} from 'src/models';
 import {MerchantService} from './merchant.service';
 
-@Controller('merchant')
+@Controller('api/merchants')
 export class MerchantController {
   constructor(private readonly merchantService: MerchantService) {}
 
