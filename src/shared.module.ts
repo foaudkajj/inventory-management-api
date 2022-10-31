@@ -9,18 +9,19 @@ import { CustomerInfoRepository } from './endpoints/customer-info/customer-info.
 import { MerchantRepository } from './endpoints/merchant/merchant.repository';
 import { PaymentMethodRepository } from './endpoints/payment-method/payment-method.repository';
 import { PermissionRepository } from './endpoints/permission/permission.repository';
+import { RolePermissionRepository } from './endpoints/role-permission/role-permission.repository';
 import { RoleRepository } from './endpoints/role/role.repository';
 import { TransactionCardRepository } from './endpoints/transaction-card/transaction-card.repository';
 import { TransactionRepository } from './endpoints/transaction/transaction.repository';
 import { UnitRepository } from './endpoints/unit/unit.repository';
 import { UserRepository } from './endpoints/user/user.repository';
-import { Branch, City, Color, Country, Currency, CustomerInfo, Merchant, PaymentMethod, Permission, Product, ProductProperty, ProductType, Role, Sale, SalePaymentMethod, SaleProduct, Transaction, TransactionCard, User } from './models';
+import { Branch, City, Color, Country, Currency, CustomerInfo, Merchant, PaymentMethod, Permission, Product, ProductProperty, ProductType, Role, RolePermission, Sale, SalePaymentMethod, SaleProduct, Transaction, TransactionCard, User } from './models';
 import { ProductTypeProperty } from './models/product-type-property.model';
 import { Unit } from './models/unit.model';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction, City, Country, Branch, Role, User, ProductProperty, ProductType, ProductTypeProperty, Sale, Product, SaleProduct, SalePaymentMethod,Permission]),
+    TypeOrmModule.forFeature([Merchant, Unit, Color, Currency, CustomerInfo, PaymentMethod, TransactionCard, Transaction, City, Country, Branch, Role, User, ProductProperty, ProductType, ProductTypeProperty, Sale, Product, SaleProduct, SalePaymentMethod,Permission,RolePermission]),
   ],
   controllers: [],
   providers: [
@@ -37,7 +38,8 @@ import { Unit } from './models/unit.model';
     BranchRepository,
     RoleRepository,
     UserRepository,
-    PermissionRepository
+    PermissionRepository,
+    RolePermissionRepository
   ],
   exports: [
     MerchantRepository,
@@ -53,7 +55,8 @@ import { Unit } from './models/unit.model';
     BranchRepository,
     RoleRepository,
     UserRepository,
-    PermissionRepository
+    PermissionRepository,
+    RolePermissionRepository
   ],
 })
 /**
