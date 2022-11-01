@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
+import { genSaltSync, hashSync } from 'bcryptjs';
 import { User } from 'src/models';
 import { UserRepository } from './user.repository';
-import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
@@ -11,8 +11,8 @@ export class UserService {
   }
 
   insert(row: User) {
-    const salt = bcrypt.genSaltSync();
-    const hashpassword = bcrypt.hashSync(row.password, salt);
+    const salt = genSaltSync();
+    const hashpassword = hashSync(row.password, salt);
     row.password = hashpassword;
     return this.userRepository.orm.insert(row);
   }
