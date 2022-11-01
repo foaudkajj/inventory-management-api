@@ -36,6 +36,7 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './endpoints/auth/strategies/jwt.strategy';
 import { PermissionService } from './endpoints/permission/permission.service';
+import { RolePermissionService } from './endpoints/role-permission/role-permission.service';
 
 @Module({
   imports: [
@@ -100,7 +101,8 @@ import { PermissionService } from './endpoints/permission/permission.service';
     AuthService,
     LocalStrategy,
     JwtStrategy,
-    PermissionService
+    PermissionService,
+    RolePermissionService
   ],
   exports: [
     UserService
