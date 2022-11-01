@@ -8,14 +8,10 @@ import {
     PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Branch } from './branch.model';
+import { UserStatus } from './enums';
 import { Merchant } from './merchant.model';
 import { Role } from './role.model';
 import { Sale } from './sale.model';
-
-export enum UserStatus {
-    Active = "Active",
-    Passive = "Passive"
-}
 
 @Entity()
 export class User {

@@ -1,5 +1,5 @@
 import {ApiProperty} from '@nestjs/swagger';
-import {UserStatus} from '../user.model';
+import { UserStatus } from '../enums';
 
 export class LoginResponse {
   @ApiProperty({type: 'token'})

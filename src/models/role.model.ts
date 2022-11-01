@@ -4,9 +4,11 @@ import {
     Entity,
     JoinColumn,
     ManyToOne,
+    OneToMany,
     PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Merchant } from './merchant.model';
+import { RolePermission } from './role-permission.model';
 
 @Entity()
 export class Role {
@@ -28,4 +30,7 @@ export class Role {
     })
     @JoinColumn({ name: 'merchant_id' })
     merchant: Merchant;
+
+    @OneToMany(() => RolePermission, (rolePermission) => rolePermission.role)
+    rolePermissions: RolePermission[];
 }

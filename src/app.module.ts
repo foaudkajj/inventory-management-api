@@ -38,6 +38,7 @@ import { JwtStrategy } from './endpoints/auth/strategies/jwt.strategy';
 import { PermissionService } from './endpoints/permission/permission.service';
 import { RolePermissionService } from './endpoints/role-permission/role-permission.service';
 import { AuthController } from './endpoints/auth/auth.controller';
+import { RolesGuard } from './endpoints/auth/guards/roles.guard';
 
 @Module({
   imports: [
@@ -104,7 +105,8 @@ import { AuthController } from './endpoints/auth/auth.controller';
     LocalStrategy,
     JwtStrategy,
     PermissionService,
-    RolePermissionService
+    RolePermissionService,
+    RolesGuard
   ],
   exports: [
     UserService
