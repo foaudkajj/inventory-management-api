@@ -1,9 +1,7 @@
-import { Controller, Request, Get, Post, Body, Put, Param, Delete, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
 import { ApiParam } from '@nestjs/swagger';
 import { User } from 'src/models';
-import { LoginRequest } from 'src/models/requests/login.request';
 import { AuthService } from '../auth/auth.service';
-import { LocalAuthGuard } from '../auth/guards/local-auth.guard';
 import { UserService } from './user.service';
 
 @Controller('api/users')
@@ -30,11 +28,5 @@ export class UserController {
   @ApiParam({ name: 'id' })
   delete(@Param('id') id: string) {
     return this.userService.delete(id);
-  }
-
-  @UseGuards(LocalAuthGuard)
-  @Post('login')
-  login(@Request() req, @Body() loginRequest: LoginRequest) {
-    return this.authService.login(req.user);
   }
 }

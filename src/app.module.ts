@@ -37,6 +37,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './endpoints/auth/strategies/jwt.strategy';
 import { PermissionService } from './endpoints/permission/permission.service';
 import { RolePermissionService } from './endpoints/role-permission/role-permission.service';
+import { AuthController } from './endpoints/auth/auth.controller';
 
 @Module({
   imports: [
@@ -81,7 +82,8 @@ import { RolePermissionService } from './endpoints/role-permission/role-permissi
     CountryController,
     BranchController,
     RoleController,
-    UserController
+    UserController,
+    AuthController
   ],
   providers: [
     AppService,
