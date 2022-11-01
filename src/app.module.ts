@@ -35,6 +35,7 @@ import { SharedModule } from './shared.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './endpoints/auth/strategies/jwt.strategy';
+import { PermissionService } from './endpoints/permission/permission.service';
 
 @Module({
   imports: [
@@ -98,7 +99,8 @@ import { JwtStrategy } from './endpoints/auth/strategies/jwt.strategy';
     UserService,
     AuthService,
     LocalStrategy,
-    JwtStrategy
+    JwtStrategy,
+    PermissionService
   ],
   exports: [
     UserService
