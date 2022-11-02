@@ -37,6 +37,12 @@ import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './endpoints/auth/strategies/jwt.strategy';
 import { PermissionService } from './endpoints/permission/permission.service';
 import { RolePermissionService } from './endpoints/role-permission/role-permission.service';
+import { ProductPropertyService } from './endpoints/product-property/product-property.service';
+import { ProductTypeService } from './endpoints/product-type/product-type.service';
+import { ProductService } from './endpoints/product/product.service';
+import { ProductPropertyController } from './endpoints/product-property/product-property.controller';
+import { ProductTypeController } from './endpoints/product-type/product-type.controller';
+import { ProductController } from './endpoints/product/product.controller';
 
 @Module({
   imports: [
@@ -81,7 +87,10 @@ import { RolePermissionService } from './endpoints/role-permission/role-permissi
     CountryController,
     BranchController,
     RoleController,
-    UserController
+    UserController,
+    ProductPropertyController,
+    ProductTypeController,
+    ProductController
   ],
   providers: [
     AppService,
@@ -102,7 +111,10 @@ import { RolePermissionService } from './endpoints/role-permission/role-permissi
     LocalStrategy,
     JwtStrategy,
     PermissionService,
-    RolePermissionService
+    RolePermissionService,
+    ProductPropertyService,
+    ProductTypeService,
+    ProductService
   ],
   exports: [
     UserService
