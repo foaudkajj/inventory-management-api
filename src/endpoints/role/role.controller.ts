@@ -1,6 +1,6 @@
 import {Controller, Get, Post, Body, Put, Param, Delete} from '@nestjs/common';
 import {ApiParam} from '@nestjs/swagger';
-import {Role} from 'src/models';
+import {AssignPermissions, Role} from 'src/models';
 import { RoleService } from './role.service';
 
 @Controller('api/roles')
@@ -33,5 +33,10 @@ export class RoleController {
   @ApiParam({name: 'role_id'})
   getRolePermissions(@Param('role_id') roleId:string){
     return this.roleService.getRolePermissions(roleId);
+  }
+
+  @Post('assign-permissions')
+  assignPermissions(@Body() request: AssignPermissions){
+    return this.roleService.assignPermissions(request);
   }
 }
