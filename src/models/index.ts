@@ -20,3 +20,4 @@ export * from './sale-product.model';
 export * from './permission.model';
 export * from './role-permission.model';
 export * from './enums';
+export * from './requests/assign-permissions.request';
