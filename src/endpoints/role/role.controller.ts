@@ -28,4 +28,10 @@ export class RoleController {
   delete(@Param('id') id: string) {
     return this.roleService.delete(id);
   }
+
+  @Get('get-role-permissions/:role_id')
+  @ApiParam({name: 'role_id'})
+  getRolePermissions(@Param('role_id') roleId:string){
+    return this.roleService.getRolePermissions(roleId);
+  }
 }
