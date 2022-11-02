@@ -1,23 +1,23 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
-import { UserService } from "src/endpoints/user/user.service";
-import { JwtService } from "@nestjs/jwt";
-import { compareSync } from "bcryptjs";
-import { LoginResponse } from "src/models/responses/login.response";
-
+import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
+import {UserService} from 'src/endpoints/user/user.service';
+import {JwtService} from '@nestjs/jwt';
+import {compareSync} from 'bcryptjs';
+import {LoginResponse} from 'src/models/responses/login.response';
+import {User} from 'src/models';
 
 @Injectable()
 export class AuthService {
   constructor(
     private usersService: UserService,
-    private jwtService: JwtService
-  ) { }
+    private jwtService: JwtService,
+  ) {}
 
   async validateUser(username: string, password: string) {
     const user = await this.usersService.findOneByUsername(username);
     if (user) {
       const matchPassword = compareSync(password, user.password);
       if (matchPassword) {
-        const { password, ...result } = user;
+        const {password, ...result} = user;
         return result;
       } else {
         throw new HttpException(
@@ -29,14 +29,21 @@ export class AuthService {
     return null;
   }
 
-  async login(user: any) {
+  async login(user: User) {
     const permissions = user.role.rolePermissions.map(rolePermission => {
       return rolePermission.permission.name;
     });
-    let payload = { username: user.username, sub: user.id, roles: [] };
+    let payload = {
+      username: user.username,
+      sub: user.id,
+      roles: [],
+      role: undefined,
+    };
 
     if (user.role.name !== 'admin') {
-      payload = { ...payload, roles: permissions };
+      payload = {...payload, roles: permissions};
+    } else {
+      payload = {...payload, role: user.role.name};
     }
     return <LoginResponse>{
       username: user.username,
