@@ -27,9 +27,13 @@ export class UserService {
 
   findOneByUsername(username: string) {
     return this.userRepository.orm.findOne({
-      where: { username: username },
+      where: { username },
       relations: {
-        role: true
+        role: {
+          rolePermissions: {
+            permission: true,
+          },
+        },
       },
     });
   }

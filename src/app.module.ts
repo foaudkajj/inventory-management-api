@@ -44,6 +44,7 @@ import {ProductService} from './endpoints/product/product.service';
 import {ProductPropertyController} from './endpoints/product-property/product-property.controller';
 import {ProductTypeController} from './endpoints/product-type/product-type.controller';
 import {ProductController} from './endpoints/product/product.controller';
+import {RolesGuard} from './endpoints/auth/guards/roles.guard';
 
 @Module({
   imports: [
@@ -114,6 +115,7 @@ import {ProductController} from './endpoints/product/product.controller';
     JwtStrategy,
     PermissionService,
     RolePermissionService,
+    RolesGuard,
     ProductPropertyService,
     ProductTypeService,
     ProductService,

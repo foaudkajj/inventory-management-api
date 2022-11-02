@@ -6,15 +6,9 @@ import {
     ManyToOne,
     PrimaryGeneratedColumn,
 } from 'typeorm';
+import { Operation } from './enums';
 import { Product } from './product.model';
 import { Sale } from './sale.model';
-
-export enum Operation {
-    Soled = "Soled",
-    Returned = "Returned",
-    Changed = "Changed",
-    TakenInsteadOfOldProducts = "TakenInsteadOfOldProducts",
-}
 
 @Entity()
 export class SaleProduct {
