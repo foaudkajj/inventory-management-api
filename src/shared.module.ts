@@ -9,6 +9,9 @@ import { CustomerInfoRepository } from './endpoints/customer-info/customer-info.
 import { MerchantRepository } from './endpoints/merchant/merchant.repository';
 import { PaymentMethodRepository } from './endpoints/payment-method/payment-method.repository';
 import { PermissionRepository } from './endpoints/permission/permission.repository';
+import { ProductPropertyRepository } from './endpoints/product-property/product-property.repository';
+import { ProductTypeRepository } from './endpoints/product-type/product-type.repository';
+import { ProductRepository } from './endpoints/product/product.repository';
 import { RolePermissionRepository } from './endpoints/role-permission/role-permission.repository';
 import { RoleRepository } from './endpoints/role/role.repository';
 import { TransactionCardRepository } from './endpoints/transaction-card/transaction-card.repository';
@@ -39,7 +42,10 @@ import { Unit } from './models/unit.model';
     RoleRepository,
     UserRepository,
     PermissionRepository,
-    RolePermissionRepository
+    RolePermissionRepository,
+    ProductPropertyRepository,
+    ProductTypeRepository,
+    ProductRepository
   ],
   exports: [
     MerchantRepository,
@@ -56,7 +62,10 @@ import { Unit } from './models/unit.model';
     RoleRepository,
     UserRepository,
     PermissionRepository,
-    RolePermissionRepository
+    RolePermissionRepository,
+    ProductPropertyRepository,
+    ProductTypeRepository,
+    ProductRepository
   ],
 })
 /**
