@@ -2,15 +2,16 @@ import {Injectable} from '@nestjs/common';
 import {InjectRepository} from '@nestjs/typeorm';
 import {BaseRepository} from 'src/base.repository';
 import {Role} from 'src/models';
-import {Repository} from 'typeorm';
+import {DataSource, Repository} from 'typeorm';
 
 @Injectable()
 export class RoleRepository extends BaseRepository<Role> {
   constructor(
     @InjectRepository(Role)
     private _: Repository<Role>,
+    public dataSource: DataSource,
   ) {
-    super();
+    super(dataSource);
     this.orm = _;
   }
 }
