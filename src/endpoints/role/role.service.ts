@@ -39,6 +39,6 @@ export class RoleService {
     const permissions = rolePermissions.map(rolePermission => {
       return rolePermission.permission;
     });
-    return permissions;
+    return permissions ?? [];
   }
 }
