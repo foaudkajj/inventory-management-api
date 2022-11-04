@@ -1,12 +1,13 @@
-import { Injectable } from '@nestjs/common';
-import { ProductType } from 'src/models';
-import { ProductTypeRepository } from './product-type.repository';
+import {Injectable} from '@nestjs/common';
+import {ProductType} from 'src/models';
+import {FindOptionsRelations} from 'typeorm';
+import {ProductTypeRepository} from './product-type.repository';
 
 @Injectable()
 export class ProductTypeService {
-  constructor(private productTypeRepository: ProductTypeRepository) { }
-  getAll(): Promise<ProductType[]> {
-    return this.productTypeRepository.orm.find();
+  constructor(private productTypeRepository: ProductTypeRepository) {}
+  getAll(relations: FindOptionsRelations<ProductType>): Promise<ProductType[]> {
+    return this.productTypeRepository.find(relations);
   }
 
   insert(row: ProductType) {
@@ -14,10 +15,10 @@ export class ProductTypeService {
   }
 
   update(row: Partial<ProductType>, id: string) {
-    return this.productTypeRepository.orm.update({ id: id }, row);
+    return this.productTypeRepository.orm.update({id: id}, row);
   }
 
   delete(id: string) {
-    return this.productTypeRepository.orm.delete({ id: id });
+    return this.productTypeRepository.orm.delete({id: id});
   }
 }
