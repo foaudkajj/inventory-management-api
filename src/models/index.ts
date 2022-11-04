@@ -21,3 +21,4 @@ export * from './permission.model';
 export * from './role-permission.model';
 export * from './enums';
 export * from './requests/assign-permissions.request';
+export * from './requests/assing-properties.request';
