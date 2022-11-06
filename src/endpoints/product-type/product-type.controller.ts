@@ -9,7 +9,7 @@ import {
   Query,
 } from '@nestjs/common';
 import {ApiParam} from '@nestjs/swagger';
-import {ProductType} from 'src/models';
+import {AssignProperties, ProductType} from 'src/models';
 import {safeJsonParse} from 'src/shared/helpers';
 import {ProductTypeService} from './product-type.service';
 
@@ -37,5 +37,10 @@ export class ProductTypeController {
   @ApiParam({name: 'id'})
   delete(@Param('id') id: string) {
     return this.productTypeService.delete(id);
+  }
+
+  @Post('assign-properties')
+  assignProperties(@Body() request: AssignProperties){
+    return this.productTypeService.assignProperties(request);
   }
 }
