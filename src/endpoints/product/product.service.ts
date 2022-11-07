@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { Product } from 'src/models';
 import { ProductRepository } from './product.repository';
 
@@ -19,5 +19,18 @@ export class ProductService {
 
   delete(id: string) {
     return this.productRepository.orm.delete({ id: id });
+  }
+
+  async getByBarcode(barcode: string) {
+    const product = await this.productRepository.orm.findOneBy({ barcode });
+
+    if (!product) {
+      throw new HttpException(
+        'ERROR.PRODUCT\_NOT_EXIST',
+        HttpStatus.NOT_FOUND,
+      );
+    }
+
+    return product;
   }
 }
