@@ -28,4 +28,10 @@ export class ProductController {
   delete(@Param('id') id: string) {
     return this.productService.delete(id);
   }
+  
+  @Get('get-by-barcode/:barcode')
+  @ApiParam({ name: 'barcode' })
+  getByBarcode(@Param('barcode') barcode: string) {
+    return this.productService.getByBarcode(barcode);
+  }
 }
