@@ -47,6 +47,7 @@ import {ProductController} from './endpoints/product/product.controller';
 import {RolesGuard} from './endpoints/auth/guards/roles.guard';
 import {APP_GUARD} from '@nestjs/core';
 import {JwtAuthGuard} from './endpoints/auth/guards/jwt-auth.guard';
+import {PermissionController} from './endpoints/permission/permission.controller';
 
 @Module({
   imports: [
@@ -96,6 +97,7 @@ import {JwtAuthGuard} from './endpoints/auth/guards/jwt-auth.guard';
     ProductPropertyController,
     ProductTypeController,
     ProductController,
+    PermissionController,
   ],
   providers: [
     AppService,
